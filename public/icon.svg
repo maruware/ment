@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="80" fill="#4F46E5"/>
+  
+  <!-- Monitor frame -->
+  <rect x="96" y="96" width="320" height="240" rx="12" fill="#fff" opacity="0.95"/>
+  <rect x="112" y="112" width="288" height="208" rx="8" fill="#818CF8"/>
+  
+  <!-- Share arrow -->
+  <g fill="#fff">
+    <!-- Arrow shaft -->
+    <rect x="230" y="180" width="52" height="80" rx="4"/>
+    <!-- Arrow head -->
+    <path d="M 256 150 L 216 200 L 256 200 L 296 200 Z"/>
+    <!-- Curved share lines emanating from arrow -->
+    <path d="M 200 200 Q 180 220 160 240" stroke="#fff" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 312 200 Q 332 220 352 240" stroke="#fff" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.7"/>
+  </g>
+  
+  <!-- Monitor stand -->
+  <rect x="228" y="336" width="56" height="40" rx="4" fill="#fff" opacity="0.95"/>
+  <rect x="180" y="376" width="152" height="16" rx="8" fill="#fff" opacity="0.95"/>
+  
+  <!-- Accent dots -->
+  <circle cx="140" cy="140" r="8" fill="#FCD34D" opacity="0.8"/>
+  <circle cx="372" cy="140" r="8" fill="#FCD34D" opacity="0.8"/>
+</svg>
