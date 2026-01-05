@@ -1,7 +1,4 @@
-import {
-	IconPlayerPlayFilled,
-	IconPlayerStopFilled,
-} from "@tabler/icons-react";
+import { IconPlayerStopFilled, IconScreenShare } from "@tabler/icons-react";
 import { useEffect, useState } from "preact/hooks";
 
 function getScreen() {
@@ -60,7 +57,7 @@ export function ScreenShare() {
 					}}
 				>
 					<button type="button" onClick={startScreenShare}>
-						<IconPlayerPlayFilled />
+						<IconScreenShare size={48} />
 					</button>
 				</div>
 			)}
