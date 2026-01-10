@@ -1,3 +1,5 @@
+import { ActionIcon, Box, Center } from "@mantine/core";
+import { notifications } from "@mantine/notifications";
 import { IconPlayerStopFilled, IconScreenShare } from "@tabler/icons-react";
 import { useEffect, useState } from "preact/hooks";
 
@@ -25,8 +27,12 @@ export function ScreenShare() {
 			}
 
 			setStream(mediaStream);
-		} catch (err) {
-			console.error("Error accessing screen:", err);
+		} catch {
+			notifications.show({
+				title: "エラー",
+				message: "画面共有へのアクセスに失敗しました",
+				color: "red",
+			});
 		}
 	};
 
@@ -46,30 +52,22 @@ export function ScreenShare() {
 	}, [stream]);
 
 	return (
-		<div style={{ width: "100vw", height: "100vh" }}>
+		<Box w="100vw" h="100vh">
 			{!stream && (
-				<div
-					style={{
-						display: "flex",
-						justifyContent: "center",
-						alignItems: "center",
-						height: "100vh",
-					}}
-				>
-					<button type="button" onClick={startScreenShare}>
+				<Center h="100vh">
+					<ActionIcon
+						size={72}
+						variant="filled"
+						color="lime"
+						onClick={startScreenShare}
+						aria-label="Start screen share"
+					>
 						<IconScreenShare size={48} />
-					</button>
-				</div>
+					</ActionIcon>
+				</Center>
 			)}
 			{stream && (
-				<div
-					style={{
-						position: "relative",
-						width: "100vw",
-						height: "100vh",
-						overflow: "hidden",
-					}}
-				>
+				<Box pos="relative" w="100vw" h="100vh" style={{ overflow: "hidden" }}>
 					<video
 						srcObject={stream}
 						autoPlay
@@ -81,19 +79,20 @@ export function ScreenShare() {
 							backgroundColor: "#000",
 						}}
 					></video>
-					<button
-						type="button"
+					<ActionIcon
+						pos="absolute"
+						top={20}
+						right={20}
+						size="lg"
+						variant="filled"
+						color="red"
 						onClick={stopScreenShare}
-						style={{
-							position: "absolute",
-							top: "20px",
-							right: "20px",
-						}}
+						aria-label="Stop screen share"
 					>
 						<IconPlayerStopFilled />
-					</button>
-				</div>
+					</ActionIcon>
+				</Box>
 			)}
-		</div>
+		</Box>
 	);
 }
