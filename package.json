@@ -21,7 +21,7 @@
 		"preact": "^10.28.2"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.3.11",
+		"@biomejs/biome": "^2.3.12",
 		"@preact/preset-vite": "^2.10.2",
 		"@types/node": "^24.10.1",
 		"typescript": "~5.9.3",
